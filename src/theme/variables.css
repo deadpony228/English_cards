@@ -1,0 +1,61 @@
+/* For information on how to create your own theme, please see:
+http://ionicframework.com/docs/theming/ */
+
+body.dark {
+  /* Пример, чтобы показать, что тема работает */
+  --ion-color-base: #121212;
+  --ion-color-contrast: #ffffff;
+  
+  --ion-background-color: #121212;
+  --ion-background-color-rgb: 18, 18, 18;
+
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255, 255, 255;
+  
+  --ion-color-step-50: #1e1e1e; /* Цвет для IonItem */
+  --ion-color-step-100: #2a2a2a; 
+  /* ... и т.д. для всех шагов */
+}
+
+
+.dark ion-toolbar {
+  --background: #1f1f1f; 
+  --color: #ffffff;
+}
+
+/* Используем класс контейнера, чтобы стили применялись ТОЛЬКО внутри вашей карточки */
+ion-card.flashcard-container {
+    /* Важно: если здесь уже есть правила, добавьте эти, чтобы они переопределили предыдущие */
+}
+
+/* --- ГАРАНТИЯ ОДИНАКОВОЙ ВЫСОТЫ КНОПОК --- */
+ion-card.flashcard-container ion-row {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+ion-card.flashcard-container ion-col {
+  display: flex !important;
+}
+
+/* --- СТИЛИЗАЦИЯ КНОПКИ И ТЕКСТА --- */
+ion-card.flashcard-container ion-button {
+  height: 100% !important;
+  width: 100% !important;
+  
+  /* Переменные для пробития Shadow DOM */
+  --height: 100% !important;
+  --vertical-align: center !important;
+  min-height: 55px !important;
+  
+  /* Стилизация текста через переменные (работает надежнее, чем ваш span) */
+  --color: #ffffff; /* Если кнопка цветная, текст, вероятно, должен быть белым */
+  --font-size: 1.1em !important;
+  font-weight: 600 !important;
+}
+
+/* Если вам все же нужен ваш span для текста, примените его через точный селектор */
+ion-card.flashcard-container .button-text {
+  white-space: normal !important; /* Гарантирует перенос */
+  /* font-weight: 600 !important; */
+}

@@ -1,0 +1,7 @@
+{
+  "name": "my-flashcards-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
